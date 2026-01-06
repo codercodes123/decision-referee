@@ -1,0 +1,117 @@
+/* 
+  Hero section - scrollable layout with fixed background
+  Background stays fixed, content scrolls naturally
+*/
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: #0a0e14;
+}
+
+/* Background layer - fixed to viewport, stays in place during scroll */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Content layer - scrollable, sits above background */
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 1.5rem;
+  padding-top: 15vh;
+  text-align: center;
+}
+
+/* Primary heading - responsive typography */
+.heading {
+  font-size: clamp(2rem, 8vw, 4.5rem);
+  font-weight: 700;
+  color: #f0f0f0;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.heading:hover {
+  color: #ffffff;
+  text-shadow: 0 2px 30px rgba(255, 255, 255, 0.15);
+}
+
+/* Subheading - secondary text */
+.subheading {
+  font-size: clamp(0.95rem, 3vw, 1.35rem);
+  font-weight: 400;
+  color: #fcfcfc;
+  margin: 0;
+  max-width: 500px;
+  line-height: 1.6;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
+  transition: color 0.3s ease;
+}
+
+.subheading:hover {
+  color: #c5c5d5;
+}
+
+/* Cards section - centered container */
+.cardsSection {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 4rem;
+}
+
+/* Cards grid - responsive layout */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  justify-items: center;
+  align-items: start;
+}
+
+/* Tablet - 2 columns */
+@media (max-width: 1024px) {
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* Mobile - 1 column */
+@media (max-width: 640px) {
+  .content {
+    padding: 1rem;
+    padding-top: 12vh;
+  }
+
+  .heading {
+    margin-bottom: 0.75rem;
+  }
+
+  .cardsSection {
+    padding: 2rem 1rem 3rem;
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}

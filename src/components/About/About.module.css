@@ -1,0 +1,239 @@
+/* About Section Container */
+.about {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 2.5rem;
+}
+
+/* Section Title */
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #f0f0f0;
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+  letter-spacing: -0.01em;
+}
+
+/* Content Blocks */
+.block {
+  margin-bottom: 2rem;
+}
+
+.block:last-of-type {
+  margin-bottom: 1.5rem;
+}
+
+/* Main Description */
+.description {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: #b0b0c0;
+  text-align: center;
+  margin: 0;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Subtitles */
+.subtitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #e0e0e8;
+  margin: 0 0 1rem 0;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+/* Technology Grid */
+.techGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.techItem {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 1.25rem;
+}
+
+.techName {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 0.625rem 0;
+}
+
+.techDesc {
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: #9a9ab0;
+  margin: 0;
+}
+
+/* Constraint Intro */
+.constraintIntro {
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: #9a9ab0;
+  text-align: center;
+  margin: 0 0 1rem 0;
+}
+
+/* Constraint Grid */
+.constraintGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.constraintItem {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+}
+
+.constraintName {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #40ffaa;
+  margin: 0 0 0.375rem 0;
+}
+
+.constraintDesc {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: #9a9ab0;
+  margin: 0;
+}
+
+/* Trade-off List */
+.tradeoffList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tradeoffList li {
+  position: relative;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: #a0a0b0;
+  padding-left: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.tradeoffList li:last-child {
+  margin-bottom: 0;
+}
+
+.tradeoffList li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: #6a6a7a;
+}
+
+/* Determinism Note */
+.determinismNote {
+  background: rgba(64, 255, 170, 0.03);
+  border: 1px solid rgba(64, 255, 170, 0.1);
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  text-align: center;
+}
+
+.determinismNote p {
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: #7a7a8a;
+  margin: 0;
+}
+
+/* ════════════════════════════════════════════════════════════
+   RESPONSIVE - TABLET
+   ════════════════════════════════════════════════════════════ */
+
+@media (max-width: 900px) {
+  .techGrid {
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+  }
+
+  .constraintGrid {
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+  }
+}
+
+/* ════════════════════════════════════════════════════════════
+   RESPONSIVE - MOBILE
+   ════════════════════════════════════════════════════════════ */
+
+@media (max-width: 640px) {
+  .about {
+    padding: 1.5rem 1rem 2rem;
+  }
+
+  .title {
+    font-size: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .block {
+    margin-bottom: 1.5rem;
+  }
+
+  .description {
+    font-size: 0.875rem;
+    line-height: 1.65;
+  }
+
+  .subtitle {
+    font-size: 0.8125rem;
+  }
+
+  .techItem {
+    padding: 1rem;
+  }
+
+  .techName {
+    font-size: 0.875rem;
+  }
+
+  .techDesc {
+    font-size: 0.8rem;
+  }
+
+  .constraintItem {
+    padding: 0.875rem 1rem;
+  }
+
+  .constraintName {
+    font-size: 0.8rem;
+  }
+
+  .constraintDesc {
+    font-size: 0.8rem;
+  }
+
+  .tradeoffList li {
+    font-size: 0.8rem;
+  }
+
+  .determinismNote {
+    padding: 0.875rem 1rem;
+  }
+
+  .determinismNote p {
+    font-size: 0.6875rem;
+  }
+}

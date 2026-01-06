@@ -1,0 +1,599 @@
+/* Referee section container */
+.referee {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem;
+}
+
+/* ════════════════════════════════════════════════════════════
+   HOW THIS TOOL WORKS SECTION
+   ════════════════════════════════════════════════════════════ */
+
+.howItWorks {
+  margin-bottom: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  background: rgba(64, 255, 170, 0.03);
+  border: 1px solid rgba(64, 255, 170, 0.12);
+  border-radius: 12px;
+}
+
+.howItWorksTitle {
+  margin: 0 0 0.75rem 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #40ffaa;
+  letter-spacing: 0.02em;
+}
+
+.howItWorksList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.howItWorksList li {
+  position: relative;
+  font-size: 0.8125rem;
+  color: #b0b0c0;
+  padding-left: 1.25rem;
+  margin-bottom: 0.375rem;
+  line-height: 1.5;
+}
+
+.howItWorksList li:last-child {
+  margin-bottom: 0;
+}
+
+.howItWorksList li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #40ffaa;
+  font-size: 0.75rem;
+}
+
+/* ════════════════════════════════════════════════════════════
+   CONSTRAINT SELECTION AREA
+   ════════════════════════════════════════════════════════════ */
+
+.constraintSection {
+  background: rgba(20, 25, 35, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  backdrop-filter: blur(8px);
+}
+
+.constraintGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+}
+
+.constraintGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.constraintLabel {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #e0e0e8;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+/* Segmented button control */
+.segmentedControl {
+  display: flex;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 5px;
+  gap: 5px;
+}
+
+.segmentButton {
+  flex: 1;
+  padding: 0.625rem 0.875rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #8a8a9a;
+  background: transparent;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.segmentButton:hover:not(:disabled):not(.segmentButtonActive) {
+  color: #c0c0d0;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.segmentButton:focus-visible {
+  outline: 2px solid rgba(64, 255, 170, 0.5);
+  outline-offset: 2px;
+}
+
+.segmentButton:disabled {
+  cursor: not-allowed;
+}
+
+.segmentButtonActive {
+  color: #ffffff;
+  font-weight: 600;
+  background: linear-gradient(135deg, rgba(64, 255, 170, 0.2) 0%, rgba(26, 231, 254, 0.2) 100%);
+  border: 1px solid rgba(64, 255, 170, 0.4);
+  box-shadow: 0 0 12px rgba(64, 255, 170, 0.15);
+}
+
+/* Button row */
+.buttonRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.compareButton {
+  padding: 0.875rem 3rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #0a0e14;
+  background: linear-gradient(135deg, #40ffaa 0%, #1ae7fe 100%);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: 0.02em;
+}
+
+.compareButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(64, 255, 170, 0.35);
+}
+
+.compareButton:focus-visible {
+  outline: 2px solid rgba(64, 255, 170, 0.8);
+  outline-offset: 3px;
+}
+
+.compareButton:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.resetButton {
+  padding: 0.625rem 1.5rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #9a9ab0;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.resetButton:hover {
+  color: #c0c0d0;
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* ════════════════════════════════════════════════════════════
+   DETERMINISM DISCLOSURE
+   ════════════════════════════════════════════════════════════ */
+
+.determinismDisclosure {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  font-size: 0.75rem;
+  color: #7a7a8a;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* ════════════════════════════════════════════════════════════
+   RESULTS SECTION
+   ════════════════════════════════════════════════════════════ */
+
+.resultsSection {
+  margin-top: 2rem;
+}
+
+/* Constraint summary line */
+.constraintSummary {
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #c0c0d0;
+  margin-bottom: 0.5rem;
+  padding: 0.875rem 1rem;
+  background: rgba(64, 255, 170, 0.05);
+  border: 1px solid rgba(64, 255, 170, 0.15);
+  border-radius: 10px;
+  letter-spacing: 0.01em;
+}
+
+/* Rule evaluation summary bar */
+.ruleSummaryBar {
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #8a8a9a;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem;
+  letter-spacing: 0.02em;
+}
+
+/* Panels grid */
+.panelsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+/* ════════════════════════════════════════════════════════════
+   COMPARISON PANELS
+   ════════════════════════════════════════════════════════════ */
+
+.panel {
+  background: rgba(20, 25, 35, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 1.5rem;
+  backdrop-filter: blur(8px);
+}
+
+.panelTitle {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 1.25rem 0;
+  padding-bottom: 0.875rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  letter-spacing: -0.01em;
+}
+
+.panelSection {
+  margin-bottom: 1.5rem;
+}
+
+.panelSection:last-child {
+  margin-bottom: 0;
+}
+
+.sectionTitle {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #a0a0b0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 0.625rem 0;
+}
+
+.bulletList {
+  margin: 0;
+  padding-left: 1.125rem;
+  list-style-type: none;
+}
+
+.bulletList li {
+  position: relative;
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  color: #d5d5e0;
+  margin-bottom: 0.5rem;
+  padding-left: 0.25rem;
+}
+
+.bulletList li::before {
+  content: '';
+  position: absolute;
+  left: -1rem;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #6a6a7a;
+}
+
+.bulletList li:last-child {
+  margin-bottom: 0;
+}
+
+.strengthItem::before {
+  background: #40ffaa;
+}
+
+.weaknessItem::before {
+  background: #ff6b6b;
+}
+
+.tradeoffItem::before {
+  background: #ffd93d;
+}
+
+.emptyItem {
+  color: #6a6a7a;
+  font-style: italic;
+}
+
+.emptyItem::before {
+  background: #4a4a5a;
+}
+
+/* ════════════════════════════════════════════════════════════
+   RULE TRACE - WHY THIS APPEARED
+   ════════════════════════════════════════════════════════════ */
+
+.ruleTrace {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ruleTraceToggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  color: #7a7a8a;
+  font-size: 0.75rem;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.ruleTraceToggle:hover {
+  color: #a0a0b0;
+}
+
+.toggleIcon {
+  font-size: 0.625rem;
+}
+
+.ruleListContainer {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.ruleItem {
+  padding: 0.75rem;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  border-left: 3px solid rgba(64, 255, 170, 0.4);
+}
+
+.ruleHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.375rem;
+}
+
+.ruleId {
+  font-family: monospace;
+  font-size: 0.625rem;
+  color: #40ffaa;
+  background: rgba(64, 255, 170, 0.1);
+  padding: 0.125rem 0.375rem;
+  border-radius: 4px;
+}
+
+.ruleTypes {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.typeTag {
+  font-size: 0.5625rem;
+  font-weight: 600;
+  padding: 0.125rem 0.375rem;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.typeTagStrength {
+  background: rgba(64, 255, 170, 0.15);
+  color: #40ffaa;
+}
+
+.typeTagWeakness {
+  background: rgba(255, 107, 107, 0.15);
+  color: #ff6b6b;
+}
+
+.typeTagTradeoff {
+  background: rgba(255, 217, 61, 0.15);
+  color: #ffd93d;
+}
+
+.ruleDesc {
+  font-size: 0.75rem;
+  color: #b0b0c0;
+  line-height: 1.5;
+  margin-bottom: 0.375rem;
+}
+
+.ruleTrigger {
+  font-size: 0.6875rem;
+  color: #6a6a7a;
+  font-style: italic;
+}
+
+/* ════════════════════════════════════════════════════════════
+   TRANSPARENCY FOOTER
+   ════════════════════════════════════════════════════════════ */
+
+.transparencyFooter {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+}
+
+.transparencyFooter ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.375rem 1.5rem;
+}
+
+.transparencyFooter li {
+  font-size: 0.6875rem;
+  color: #6a6a7a;
+  position: relative;
+  padding-left: 0.875rem;
+}
+
+.transparencyFooter li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #40ffaa;
+  font-size: 0.625rem;
+}
+
+/* ════════════════════════════════════════════════════════════
+   RESPONSIVE - TABLET
+   ════════════════════════════════════════════════════════════ */
+
+@media (max-width: 960px) {
+  .panelsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .panel {
+    padding: 1.25rem;
+  }
+
+  .transparencyFooter ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.375rem;
+  }
+}
+
+/* ════════════════════════════════════════════════════════════
+   RESPONSIVE - MOBILE
+   ════════════════════════════════════════════════════════════ */
+
+@media (max-width: 640px) {
+  .referee {
+    padding: 1.5rem 1rem;
+  }
+
+  .howItWorks {
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .howItWorksTitle {
+    font-size: 0.75rem;
+  }
+
+  .howItWorksList li {
+    font-size: 0.75rem;
+  }
+
+  .constraintSection {
+    padding: 1.25rem;
+  }
+
+  .constraintGrid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .constraintLabel {
+    font-size: 0.75rem;
+  }
+
+  .segmentedControl {
+    padding: 4px;
+    gap: 4px;
+  }
+
+  .segmentButton {
+    padding: 0.5rem 0.375rem;
+    font-size: 0.75rem;
+  }
+
+  .buttonRow {
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+
+  .compareButton {
+    width: 100%;
+    padding: 0.875rem 1.5rem;
+  }
+
+  .resetButton {
+    width: auto;
+    padding: 0.5rem 1.25rem;
+  }
+
+  .determinismDisclosure {
+    font-size: 0.6875rem;
+    padding: 0.875rem 1rem;
+  }
+
+  .constraintSummary {
+    font-size: 0.8125rem;
+    padding: 0.75rem;
+  }
+
+  .ruleSummaryBar {
+    font-size: 0.6875rem;
+  }
+
+  .panel {
+    padding: 1.125rem;
+  }
+
+  .panelTitle {
+    font-size: 1.125rem;
+  }
+
+  .bulletList li {
+    font-size: 0.8rem;
+    line-height: 1.6;
+  }
+
+  .ruleItem {
+    padding: 0.625rem;
+  }
+
+  .transparencyFooter {
+    padding: 0.875rem 1rem;
+  }
+
+  .transparencyFooter li {
+    font-size: 0.625rem;
+  }
+}
