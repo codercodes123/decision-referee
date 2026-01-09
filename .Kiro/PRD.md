@@ -1,10 +1,14 @@
 # Product Requirements Document
 ## Decision Referee – API Architecture Selector
 
-**Version:** 1.1  
-**Date:** January 2, 2026  
-**Author:** System Architecture Team  
-**Status:** Final Draft for Capstone Review
+
+---
+
+## Author's Intent
+
+I built Decision Referee after repeatedly seeing architecture decisions framed as "best practices" rather than contextual trade-offs. Teams often inherit hidden costs because constraints were never made explicit. This tool exists to slow decisions down just enough to expose consequences — not to replace judgment.
+
+It does not model organizational politics, legacy constraints, or human bias. Those remain intentionally out of scope. The goal is epistemic clarity: helping engineers see what they're trading, not telling them what to choose.
 
 ---
 

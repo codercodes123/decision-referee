@@ -1,6 +1,6 @@
 /* 
-  Global styles - scrollable foundation
-  Allows natural page flow while maintaining background
+  Global styles - Enhanced Typography & Contrast
+  WCAG AA compliant, improved readability
 */
 
 *,
@@ -11,6 +11,7 @@
 
 html {
   height: 100%;
+  font-size: 16px;
 }
 
 body {
@@ -22,9 +23,23 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #0a0e14;
+  color: #d0d0e0;
+  line-height: 1.6;
 }
 
 #root {
   min-height: 100%;
   width: 100%;
+}
+
+/* Focus styles for accessibility */
+:focus-visible {
+  outline: 2px solid rgba(64, 255, 170, 0.6);
+  outline-offset: 2px;
+}
+
+/* Improved selection colors */
+::selection {
+  background: rgba(64, 255, 170, 0.3);
+  color: #ffffff;
 }

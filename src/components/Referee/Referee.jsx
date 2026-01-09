@@ -4,6 +4,7 @@ import styles from './Referee.module.css';
 import ConstraintSelector from './ConstraintSelector';
 import ComparisonPanel from './ComparisonPanel';
 import { evaluateConstraints, formatConstraintSummary, getRuleCount } from '../../referee';
+import { generateInsight } from './insightGenerator';
 
 export default function Referee() {
   const [constraints, setConstraints] = useState({
@@ -14,6 +15,7 @@ export default function Referee() {
   });
   const [results, setResults] = useState(null);
   const [constraintSummary, setConstraintSummary] = useState('');
+  const [insight, setInsight] = useState('');
   const [isLocked, setIsLocked] = useState(false);
 
   const allSelected = Object.values(constraints).every((v) => v !== null);
@@ -23,6 +25,7 @@ export default function Referee() {
     if (!allSelected) return;
     setIsLocked(true);
     setConstraintSummary(formatConstraintSummary(constraints));
+    setInsight(generateInsight(constraints));
     setResults(evaluateConstraints(constraints));
   };
 
@@ -35,6 +38,7 @@ export default function Referee() {
     });
     setResults(null);
     setConstraintSummary('');
+    setInsight('');
     setIsLocked(false);
   };
 
@@ -57,6 +61,11 @@ export default function Referee() {
           onChange={setConstraints}
           disabled={isLocked}
         />
+
+        {/* Guided Exploration Hint */}
+        <div className={styles.explorationHint}>
+          Try changing only one constraint at a time to observe how consequences propagate across all options.
+        </div>
 
         <div className={styles.buttonRow}>
           <button
@@ -91,6 +100,12 @@ export default function Referee() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, ease: 'easeOut' }}
         >
+          {/* Insight Callout - Architect Commentary */}
+          <div className={styles.insightCallout}>
+            <span className={styles.insightIcon}>◈</span>
+            <p className={styles.insightText}>{insight}</p>
+          </div>
+
           {/* Constraint Summary */}
           <div className={styles.constraintSummary}>
             Constraints applied: {constraintSummary}
