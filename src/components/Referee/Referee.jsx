@@ -44,27 +44,46 @@ export default function Referee() {
 
   return (
     <section className={styles.referee}>
-      {/* How This Tool Works - Above Constraint Selector */}
+      {/* Decision Timeline - Linear Process Visualization */}
+      <div className={styles.decisionTimeline}>
+        <div className={styles.timelineStep}>Design Discussion</div>
+        <div className={styles.timelineSeparator}>—</div>
+        <div className={`${styles.timelineStep} ${styles.timelineStepActive}`}>Constraint Declaration</div>
+        <div className={styles.timelineSeparator}>—</div>
+        <div className={styles.timelineStep}>Risk Exposure</div>
+        <div className={styles.timelineSeparator}>—</div>
+        <div className={styles.timelineStep}>ADR Commitment</div>
+      </div>
+
+      {/* How This Referee Evaluates Risk */}
       <div className={styles.howItWorks}>
-        <h4 className={styles.howItWorksTitle}>How This Tool Works</h4>
+        <h4 className={styles.howItWorksTitle}>How This Referee Evaluates Risk</h4>
         <ul className={styles.howItWorksList}>
-          <li>Select explicit constraints that reflect your real-world context</li>
+          <li>You declare the constraints under which the system must operate</li>
           <li>Deterministic rules translate constraints into architectural consequences</li>
-          <li>The tool explains trade-offs without choosing for you</li>
+          <li>The referee exposes trade-offs and risk boundaries without choosing for you</li>
         </ul>
       </div>
 
-      {/* Constraint Selection */}
+      {/* Constraint Declaration Section */}
       <div className={styles.constraintSection}>
+        <div className={styles.constraintHeader}>
+          <h4 className={styles.constraintTitle}>Declare the conditions this system must survive</h4>
+          <p className={styles.constraintSubtext}>These constraints define risk exposure — not preferences.</p>
+        </div>
+
         <ConstraintSelector
           values={constraints}
           onChange={setConstraints}
           disabled={isLocked}
         />
 
-        {/* Guided Exploration Hint */}
-        <div className={styles.explorationHint}>
-          Try changing only one constraint at a time to observe how consequences propagate across all options.
+        {/* Decision Stress Test */}
+        <div className={styles.stressTest}>
+          <span className={styles.stressTestLabel}>Decision Stress Test</span>
+          <p className={styles.stressTestInstruction}>
+            Change exactly one constraint at a time to observe how architectural risk shifts.
+          </p>
         </div>
 
         <div className={styles.buttonRow}>
@@ -73,7 +92,7 @@ export default function Referee() {
             onClick={handleCompare}
             disabled={!allSelected || isLocked}
           >
-            Compare
+            Evaluate
           </button>
           {isLocked && (
             <button
@@ -84,13 +103,6 @@ export default function Referee() {
             </button>
           )}
         </div>
-
-        {/* Determinism Disclosure - Below Compare Button */}
-        <div className={styles.determinismDisclosure}>
-          This comparison is generated using deterministic rules.
-          Given the same constraints, the output will always be identical.
-          No AI, scoring, ranking, or recommendation logic is used.
-        </div>
       </div>
 
       {results && (
@@ -100,15 +112,30 @@ export default function Referee() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, ease: 'easeOut' }}
         >
-          {/* Insight Callout - Architect Commentary */}
+          {/* Determinism Banner - Visible */}
+          <div className={styles.determinismBanner}>
+            This output is generated using deterministic, rule-based logic.
+            Given the same constraints, the output will always be identical.
+            No AI, scoring, ranking, or recommendations are used.
+          </div>
+
+          {/* Architectural Warning */}
           <div className={styles.insightCallout}>
-            <span className={styles.insightIcon}>◈</span>
+            <span className={styles.insightLabel}>Architectural Warning</span>
             <p className={styles.insightText}>{insight}</p>
+            <p className={styles.insightDisclaimer}>
+              This warning does not invalidate any option. It highlights risk accumulation under current constraints.
+            </p>
           </div>
 
           {/* Constraint Summary */}
           <div className={styles.constraintSummary}>
             Constraints applied: {constraintSummary}
+          </div>
+
+          {/* Consequences Header */}
+          <div className={styles.consequencesHeader}>
+            The following consequences emerge under the declared constraints.
           </div>
 
           {/* Rule Evaluation Summary Bar */}
@@ -128,7 +155,7 @@ export default function Referee() {
             <ul>
               <li>Rules are human-readable without running the app</li>
               <li>Same inputs always produce the same outputs</li>
-              <li>Architectural judgment remains with the user</li>
+              <li>Architectural judgment remains with the engineering team</li>
             </ul>
           </div>
         </motion.div>

@@ -6,21 +6,21 @@ import TiltedCard from '../TittedText/TiltedCard';
 import About from '../About/About';
 import Referee from '../Referee/Referee';
 
-/* Home component - scrollable page with fixed PixelSnow background */
+/* Home component - Pre-ADR Architecture Decision Referee */
 function Home() {
   return (
     <main className={styles.hero}>
-      {/* Background layer - fixed PixelSnow */}
+      {/* Background layer - PixelSnow with reduced opacity */}
       <div className={styles.background}>
         <PixelSnow
           color="#ffffff"
           flakeSize={0.01}
           minFlakeSize={1.25}
           pixelResolution={200}
-          speed={1.2}
-          density={0.30}
-          direction={125}
-          brightness={2}
+          speed={0.8}
+          density={0.10}
+          direction={145}
+          brightness={1.5}
         />
       </div>
 
@@ -31,7 +31,7 @@ function Home() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
       >
-        {/* Hero Heading */}
+        {/* Hero Heading - Authority Framing */}
         <motion.h1
           className={styles.heading}
           initial={{ opacity: 0, y: 20 }}
@@ -39,12 +39,12 @@ function Home() {
           transition={{ duration: 0.6, delay: 0.3, ease: 'easeOut' }}
         >
           <GradientText
-            colors={["#eaeaeaff", "#fe0afeff", "#40ffaa", "#1ae7feff", "#40ffaa"]}
-            animationSpeed={3}
+            colors={["#eaeaeaff", "#40ffaa", "#1ae7feff", "#40ffaa", "#eaeaeaff"]}
+            animationSpeed={4}
             showBorder={false}
             className={styles.heading}
           >
-            Decision Referee
+            Decision Gate
           </GradientText>
         </motion.h1>
 
@@ -54,14 +54,41 @@ function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5, ease: 'easeOut' }}
         >
-          A constraint-driven framework for comparing REST, GraphQL, and gRPC — without recommendations
+          Architectural decisions don't have best answers — only consequences.
         </motion.p>
 
-        {/* About Section - Between hero and Referee */}
+        <motion.p
+          className={styles.supportingLine}
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.55, ease: 'easeOut' }}
+        >
+          A deterministic, rule-based referee that surfaces trade-offs and risks before an architecture decision is locked into an ADR.
+        </motion.p>
+
+        {/* Hero Divider */}
+        <motion.div
+          className={styles.heroDivider}
+          initial={{ opacity: 0, scaleX: 0 }}
+          animate={{ opacity: 1, scaleX: 1 }}
+          transition={{ duration: 0.5, delay: 0.6, ease: 'easeOut' }}
+        />
+
+        {/* Authority Cue */}
+        <motion.p
+          className={styles.authorityCue}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.65, ease: 'easeOut' }}
+        >
+          Use this referee to surface risks before an architecture decision becomes irreversible.
+        </motion.p>
+
+        {/* About Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6, ease: 'easeOut' }}
+          transition={{ duration: 0.6, delay: 0.7, ease: 'easeOut' }}
         >
           <About />
         </motion.div>
@@ -70,7 +97,7 @@ function Home() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.7, ease: 'easeOut' }}
+          transition={{ duration: 0.6, delay: 0.75, ease: 'easeOut' }}
         >
           <Referee />
         </motion.div>

@@ -1,43 +1,74 @@
 /* ════════════════════════════════════════════════════════════
-   ABOUT SECTION - Enhanced Readability & Visual Hierarchy
+   ABOUT SECTION - Pre-ADR Referee Documentation Style
    ════════════════════════════════════════════════════════════ */
 
 .about {
   width: 100%;
-  max-width: 1000px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 2rem 1.25rem 2.5rem;
+  padding: 2.5rem 2rem;
+  background: rgba(20, 25, 35, 0.6);
+  border: 1px solid rgba(64, 255, 170, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.about:hover {
+  border-color: rgba(64, 255, 170, 0.2);
+  box-shadow: 0 0 40px rgba(64, 255, 170, 0.08);
 }
 
 /* Section Title */
 .title {
-  font-size: 1.625rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #f5f5f5;
   margin: 0 0 1.75rem 0;
   text-align: center;
   letter-spacing: -0.01em;
+  position: relative;
+  display: inline-block;
+  width: 100%;
 }
 
-/* Content Blocks */
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(64, 255, 170, 0.5), transparent);
+  border-radius: 1px;
+}
+
+/* Content Blocks - Increased Vertical Spacing */
 .block {
-  margin-bottom: 2.25rem;
+  margin-bottom: 2.5rem;
 }
 
 .block:last-of-type {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
-/* Main Description - Improved Contrast */
-.description {
-  font-size: 0.9375rem;
-  line-height: 1.75;
-  color: #c5c5d5;
+/* Core Statement - Documentation Tone with hover */
+.coreStatement {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #d0d0e0;
   text-align: center;
-  margin: 0;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 0 0.25rem 0;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+.coreStatement:hover {
+  color: #ffffff;
+  background: rgba(64, 255, 170, 0.05);
 }
 
 /* Subtitles - Stronger Weight */
@@ -64,22 +95,22 @@
   background: rgba(30, 35, 45, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
-  padding: 1.5rem;
+  padding: 1.25rem;
   transition: all 0.18s ease;
 }
 
 .techName {
-  font-size: 1.0625rem;
+  font-size: 1rem;
   font-weight: 700;
   color: #ffffff;
-  margin: 0 0 0.75rem 0;
+  margin: 0 0 0.625rem 0;
   transition: color 0.18s ease;
 }
 
 .techDesc {
-  font-size: 0.8375rem;
+  font-size: 0.8125rem;
   line-height: 1.65;
-  color: #a8a8b8;
+  color: #b8b8c8;
   margin: 0;
   transition: color 0.18s ease;
 }
@@ -151,228 +182,50 @@
 }
 
 /* ════════════════════════════════════════════════════════════
-   CONSTRAINT EXPANDERS - Progressive Disclosure
+   TRADE-OFF NOTE - Enhanced styling
    ════════════════════════════════════════════════════════════ */
 
-.constraintIntro {
-  font-size: 0.875rem;
-  line-height: 1.65;
-  color: #a0a0b0;
+.tradeoffNote {
+  background: linear-gradient(135deg, rgba(64, 255, 170, 0.04) 0%, rgba(26, 231, 254, 0.04) 100%);
+  border: 1px solid rgba(64, 255, 170, 0.15);
+  border-radius: 12px;
+  padding: 1.25rem 1.75rem;
   text-align: center;
-  margin: 0 0 1.25rem 0;
+  transition: all 0.3s ease;
 }
 
-.constraintGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  align-items: start;
+.tradeoffNote:hover {
+  border-color: rgba(64, 255, 170, 0.3);
+  box-shadow: 0 0 30px rgba(64, 255, 170, 0.1);
 }
 
-.constraintItem {
-  background: rgba(25, 30, 40, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 10px;
-  overflow: hidden;
-  transition: border-color 0.18s ease;
-  align-self: start;
-}
-
-.constraintItem:hover {
-  border-color: rgba(64, 255, 170, 0.2);
-}
-
-.constraintToggle {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem 1.25rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-  transition: background 0.18s ease;
-}
-
-.constraintToggle:hover {
-  background: rgba(255, 255, 255, 0.02);
-}
-
-.constraintToggle:focus-visible {
-  outline: 2px solid rgba(64, 255, 170, 0.5);
-  outline-offset: -2px;
-}
-
-.constraintName {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #40ffaa;
-  flex-shrink: 0;
-}
-
-.constraintSummary {
-  font-size: 0.8125rem;
-  color: #8a8a9a;
-  flex: 1;
-}
-
-.expandIcon {
-  font-size: 1rem;
-  font-weight: 300;
-  color: #6a6a7a;
-  width: 1.5rem;
-  height: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: color 0.18s ease;
-}
-
-.constraintToggle:hover .expandIcon {
-  color: #40ffaa;
-}
-
-/* Expanded Content */
-.constraintExpanded {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.25s ease-out;
-}
-
-.constraintExpandedVisible {
-  max-height: 200px;
-  transition: max-height 0.3s ease-in;
-}
-
-.constraintDetail {
-  padding: 0 1.25rem;
-  margin-bottom: 0.75rem;
-}
-
-.constraintDetail:first-child {
-  padding-top: 0.25rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.constraintDetail:last-child {
-  margin-bottom: 1rem;
-}
-
-.detailLabel {
-  display: block;
-  font-size: 0.6875rem;
-  font-weight: 600;
-  color: #7a7a8a;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.25rem;
-}
-
-.detailText {
-  display: block;
-  font-size: 0.8125rem;
-  line-height: 1.55;
-  color: #b0b0c0;
-}
-
-/* ════════════════════════════════════════════════════════════
-   TRADE-OFF VISUAL STEPS
-   ════════════════════════════════════════════════════════════ */
-
-.tradeoffSteps {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.tradeoffStep {
-  display: flex;
-  align-items: center;
-  gap: 0.625rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 8px;
-  padding: 0.75rem 1rem;
-}
-
-.stepNumber {
-  width: 1.5rem;
-  height: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(64, 255, 170, 0.15);
-  color: #40ffaa;
-  font-size: 0.75rem;
-  font-weight: 700;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.stepText {
-  font-size: 0.8125rem;
-  color: #c0c0d0;
+.tradeoffNote p {
+  font-size: 0.9375rem;
   font-weight: 500;
-}
-
-.tradeoffArrow {
-  color: #5a5a6a;
-  font-size: 1rem;
-}
-
-/* Trade-off List */
-.tradeoffList {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.tradeoffList li {
-  position: relative;
-  font-size: 0.8375rem;
-  line-height: 1.65;
+  line-height: 1.5;
   color: #b0b0c0;
-  padding-left: 1.25rem;
-  margin-bottom: 0.5rem;
+  margin: 0 0 0.5rem 0;
+  font-style: italic;
+  transition: color 0.2s ease;
 }
 
-.tradeoffList li:last-child {
+.tradeoffNote:hover p {
+  color: #d0d0e0;
+}
+
+.tradeoffNote p:last-child {
   margin-bottom: 0;
 }
 
-.tradeoffList li::before {
-  content: '—';
-  position: absolute;
-  left: 0;
-  color: #6a6a7a;
+.finalClarity {
+  font-size: 0.8125rem !important;
+  font-weight: 400 !important;
+  color: #7a7a8a !important;
+  font-style: normal !important;
 }
 
-/* ════════════════════════════════════════════════════════════
-   DETERMINISM NOTE
-   ════════════════════════════════════════════════════════════ */
-
-.determinismNote {
-  background: rgba(64, 255, 170, 0.04);
-  border: 1px solid rgba(64, 255, 170, 0.12);
-  border-radius: 10px;
-  padding: 1.125rem 1.5rem;
-  text-align: center;
-}
-
-.determinismNote p {
-  font-size: 0.8125rem;
-  line-height: 1.65;
-  color: #8a8a9a;
-  margin: 0;
+.tradeoffNote:hover .finalClarity {
+  color: #9a9ab0 !important;
 }
 
 /* ════════════════════════════════════════════════════════════
@@ -384,20 +237,6 @@
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-
-  .constraintGrid {
-    grid-template-columns: 1fr;
-    gap: 0.875rem;
-  }
-
-  .tradeoffSteps {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .tradeoffArrow {
-    transform: rotate(90deg);
-  }
 }
 
 /* ════════════════════════════════════════════════════════════
@@ -406,20 +245,25 @@
 
 @media (max-width: 640px) {
   .about {
-    padding: 1.5rem 1rem 2rem;
+    padding: 1.5rem 1.25rem 2rem;
+    border-radius: 16px;
   }
 
   .title {
-    font-size: 1.375rem;
+    font-size: 1.25rem;
     margin-bottom: 1.5rem;
   }
 
-  .block {
-    margin-bottom: 1.75rem;
+  .title::after {
+    width: 40px;
   }
 
-  .description {
-    font-size: 0.875rem;
+  .block {
+    margin-bottom: 2rem;
+  }
+
+  .coreStatement {
+    font-size: 0.9375rem;
     line-height: 1.7;
   }
 
@@ -429,70 +273,22 @@
   }
 
   .techItem {
-    padding: 1.25rem;
-  }
-
-  .techName {
-    font-size: 1rem;
-  }
-
-  .techDesc {
-    font-size: 0.8125rem;
-  }
-
-  .constraintToggle {
-    padding: 0.875rem 1rem;
-  }
-
-  .constraintName {
-    font-size: 0.8125rem;
-    width: 100%;
-    margin-bottom: 0.125rem;
-  }
-
-  .constraintSummary {
-    font-size: 0.75rem;
-    width: 100%;
-  }
-
-  .expandIcon {
-    position: absolute;
-    right: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  .constraintItem {
-    position: relative;
-  }
-
-  .constraintDetail {
-    padding: 0 1rem;
-  }
-
-  .detailText {
-    font-size: 0.8rem;
-  }
-
-  .tradeoffStep {
-    width: 100%;
-    justify-content: center;
-    padding: 0.625rem 0.875rem;
-  }
-
-  .stepText {
-    font-size: 0.8rem;
-  }
-
-  .tradeoffList li {
-    font-size: 0.8125rem;
-  }
-
-  .determinismNote {
     padding: 1rem;
   }
 
-  .determinismNote p {
-    font-size: 0.75rem;
+  .techName {
+    font-size: 0.9375rem;
+  }
+
+  .techDesc {
+    font-size: 0.8rem;
+  }
+
+  .tradeoffNote {
+    padding: 1rem;
+  }
+
+  .tradeoffNote p {
+    font-size: 0.875rem;
   }
 }

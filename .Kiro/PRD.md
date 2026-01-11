@@ -1,14 +1,18 @@
 # Product Requirements Document
-## Decision Referee – API Architecture Selector
+## Architecture Decision Referee — Pre-ADR Risk & Trade-off Gate
 
 
 ---
 
 ## Author's Intent
 
-I built Decision Referee after repeatedly seeing architecture decisions framed as "best practices" rather than contextual trade-offs. Teams often inherit hidden costs because constraints were never made explicit. This tool exists to slow decisions down just enough to expose consequences — not to replace judgment.
+I built this referee because I've watched too many architecture decisions get locked into ADRs before anyone understood the consequences. Teams pick GraphQL because it's "modern," REST because it's "safe," or gRPC because it's "fast" — without articulating the constraints that make those statements true or false.
 
-It does not model organizational politics, legacy constraints, or human bias. Those remain intentionally out of scope. The goal is epistemic clarity: helping engineers see what they're trading, not telling them what to choose.
+Recommendations are misleading. They collapse multi-dimensional trade-offs into false simplicity. A tool that says "use REST" has already failed — it's hidden the reasoning that matters.
+
+This referee exists to slow decisions down just enough to expose what each choice trades away. It doesn't resolve trade-offs; it reveals them. The goal is not to automate judgment, but to inform it.
+
+Architectural decisions must remain human. This tool ensures they're also deliberate.
 
 ---
 

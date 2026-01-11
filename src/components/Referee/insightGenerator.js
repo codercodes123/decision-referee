@@ -1,72 +1,72 @@
 /**
- * Insight Generator - Constraint-Aware Observations
+ * Insight Generator - Architectural Warnings
  * 
- * Generates observational callouts based on selected constraints.
- * These are architect-style commentary, not recommendations.
+ * Generates warning callouts based on selected constraints.
+ * These surface risk accumulation patterns, not recommendations.
  * 
  * Rules:
- * - Deterministic: same constraints → same insight
+ * - Deterministic: same constraints → same warning
  * - Neutral: no option is favored
- * - Observational: describes patterns, not prescriptions
+ * - Risk-focused: describes where operational risk accumulates
  */
 
 const insights = [
-  // Scale-focused observations
+  // Scale-focused warnings
   {
     condition: (c) => c.scale === 'large',
-    text: 'Notice how large scale amplifies both performance benefits and operational complexity — without making any single option universally superior.'
+    text: 'Under these constraints, certain options begin accumulating operational risk without immediately failing. Large scale amplifies performance differences and exposes infrastructure limits that remain invisible at smaller volumes.'
   },
   {
     condition: (c) => c.scale === 'small',
-    text: 'At small scale, infrastructure overhead becomes the dominant factor — observe how this shifts the trade-off balance toward simplicity.'
+    text: 'At small scale, infrastructure overhead and learning curves dominate the risk profile. Performance differences between options may not materialize until scale increases.'
   },
   
-  // Expertise-focused observations
+  // Expertise-focused warnings
   {
     condition: (c) => c.expertise === 'beginner',
-    text: 'With beginner expertise, learning curves become visible constraints — notice how familiarity influences risk across all options.'
+    text: 'Under these constraints, certain options begin accumulating operational risk without immediately failing. Beginner expertise increases the likelihood of misconfiguration and extends debugging timelines for complex architectures.'
   },
   {
     condition: (c) => c.expertise === 'expert',
-    text: 'Expert teams unlock advanced patterns — but observe how this shifts trade-offs toward operational complexity rather than eliminating them.'
+    text: 'Expert teams can absorb complexity that would overwhelm less experienced teams. However, this trades simplicity for operational control — a trade-off that compounds over time.'
   },
   
-  // Time-focused observations
+  // Time-focused warnings
   {
     condition: (c) => c.timeToMarket === 'fast',
-    text: 'Observe how fast delivery pressure reduces tolerance for schema and tooling complexity across all options.'
+    text: 'Fast delivery pressure reduces tolerance for learning curves and schema complexity. Decisions made under time pressure may require refactoring once constraints relax.'
   },
   {
     condition: (c) => c.timeToMarket === 'balanced',
-    text: 'Balanced timelines reveal long-term trade-offs that fast delivery would obscure — notice how schema-first approaches become viable.'
+    text: 'Balanced timelines reveal long-term trade-offs that fast delivery would obscure. Schema-first approaches and custom infrastructure become viable options.'
   },
   
-  // Risk-focused observations
+  // Risk-focused warnings
   {
     condition: (c) => c.riskTolerance === 'low',
-    text: 'Under low risk tolerance, mature ecosystems tend to reduce surprise — but may limit flexibility. Neither outcome is inherently correct.'
+    text: 'Low risk tolerance narrows viable options toward mature, well-documented patterns. This reduces operational surprise but may limit performance optimization.'
   },
   {
     condition: (c) => c.riskTolerance === 'high',
-    text: 'High risk tolerance enables aggressive optimization — observe how this unlocks strengths while accepting operational uncertainty.'
+    text: 'High risk tolerance enables aggressive optimization but accepts operational uncertainty. Performance gains may come at the cost of debugging complexity.'
   },
   
-  // Compound observations
+  // Compound warnings
   {
     condition: (c) => c.scale === 'large' && c.expertise === 'beginner',
-    text: 'Large scale with beginner expertise creates tension — notice how operational risk compounds when complexity exceeds team capability.'
+    text: 'Under these constraints, certain options begin accumulating operational risk without immediately failing. Large scale with beginner expertise creates compounding pressure — infrastructure limits require operational knowledge to navigate safely.'
   },
   {
     condition: (c) => c.scale === 'large' && c.expertise === 'expert',
-    text: 'Expert teams at large scale can leverage advanced patterns — but observe how this trades accessibility for performance.'
+    text: 'Expert teams at large scale can optimize aggressively, but this trades simplicity for operational control. Capacity planning and infrastructure management become ongoing responsibilities.'
   },
   {
     condition: (c) => c.timeToMarket === 'fast' && c.riskTolerance === 'low',
-    text: 'Fast delivery with low risk creates pressure toward familiar patterns — notice how this narrows viable options without declaring a winner.'
+    text: 'Fast delivery with low risk tolerance creates strong pressure toward familiar patterns. This combination narrows viable options significantly without declaring a winner.'
   },
   {
     condition: (c) => c.expertise === 'beginner' && c.timeToMarket === 'fast',
-    text: 'Beginner teams under time pressure face compounding constraints — observe how learning curves become delivery risks.'
+    text: 'Under these constraints, certain options begin accumulating operational risk without immediately failing. Beginner teams under time pressure face compounding constraints — learning curves become delivery risks.'
   }
 ];
 

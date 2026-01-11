@@ -4,6 +4,7 @@ const constraints = [
   {
     id: 'expertise',
     label: 'Team Expertise',
+    description: 'Familiarity with API paradigms and operational tooling',
     options: [
       { value: 'beginner', label: 'Beginner' },
       { value: 'intermediate', label: 'Intermediate' },
@@ -13,6 +14,7 @@ const constraints = [
   {
     id: 'scale',
     label: 'Scale Expectation',
+    description: 'Anticipated request volume and data throughput',
     options: [
       { value: 'small', label: 'Small' },
       { value: 'medium', label: 'Medium' },
@@ -22,6 +24,7 @@ const constraints = [
   {
     id: 'timeToMarket',
     label: 'Time-to-Market',
+    description: 'Delivery pressure vs. long-term optimization',
     options: [
       { value: 'fast', label: 'Fast' },
       { value: 'balanced', label: 'Balanced' }
@@ -30,6 +33,7 @@ const constraints = [
   {
     id: 'riskTolerance',
     label: 'Risk Tolerance',
+    description: 'Willingness to accept operational uncertainty',
     options: [
       { value: 'low', label: 'Low' },
       { value: 'medium', label: 'Medium' },
@@ -49,6 +53,9 @@ export default function ConstraintSelector({ values, onChange, disabled }) {
       {constraints.map((constraint) => (
         <div key={constraint.id} className={styles.constraintGroup}>
           <span className={styles.constraintLabel}>{constraint.label}</span>
+          {constraint.description && (
+            <span className={styles.constraintDescription}>{constraint.description}</span>
+          )}
           <div className={styles.segmentedControl}>
             {constraint.options.map((option) => {
               const isSelected = values[constraint.id] === option.value;
