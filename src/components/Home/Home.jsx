@@ -84,22 +84,22 @@ function Home() {
           Use this referee to surface risks before an architecture decision becomes irreversible.
         </motion.p>
 
-        {/* About Section */}
+        {/* Referee interaction section - Comparison Modal */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.7, ease: 'easeOut' }}
         >
-          <About />
+          <Referee />
         </motion.div>
 
-        {/* Referee interaction section */}
+        {/* About Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.75, ease: 'easeOut' }}
         >
-          <Referee />
+          <About />
         </motion.div>
 
         {/* Conceptual cards section */}
